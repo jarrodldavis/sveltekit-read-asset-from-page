@@ -1,0 +1,6 @@
+[workspace]
+members = ["src/lib/page-only", "src/lib/page-and-endpoint"]
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
