@@ -1,0 +1,12 @@
+diff --git a/src/core/generate_manifest/find_server_assets.js b/src/core/generate_manifest/find_server_assets.js
+index 3a562f4b53a01301aa36bea61d11edf248d0890c..2009a241596811397166b8cd24e2550bf3499b0a 100644
+--- a/src/core/generate_manifest/find_server_assets.js
++++ b/src/core/generate_manifest/find_server_assets.js
+@@ -41,6 +41,7 @@ export function find_server_assets(build_data, routes) {
+ 
+ 	for (const n of used_nodes) {
+ 		const node = build_data.manifest_data.nodes[n];
++		if (node?.component) add_assets(node.component);
+ 		if (node?.server) add_assets(node.server);
+ 	}
+ 
